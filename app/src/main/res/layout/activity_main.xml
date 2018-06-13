@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Layout for the main screen -->
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gridview_playlist"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:columnWidth="90dp"
+    android:gravity="center"
+    android:numColumns="1"
+    android:stretchMode="columnWidth"
+    tools:layoutManager="android.support.v7.widget.GridLayoutManager"
+    tools:listitem="@layout/list_item"
+    tools:spanCount="1" />

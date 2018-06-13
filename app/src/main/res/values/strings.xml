@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CODECK</string>
+    <string name="playlist_image_description">Playlist image</string>
+    <string name="playlist_activity_title">Now Playing</string>
+</resources>
