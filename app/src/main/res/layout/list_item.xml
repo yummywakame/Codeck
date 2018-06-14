@@ -11,10 +11,10 @@
         android:id="@+id/playlist_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:cardCornerRadius="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="5dp"
         app:cardElevation="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,30 +40,15 @@
                 tools:src="@drawable/preview_chill_study_beats_1" />
 
             <ImageView
-                android:id="@+id/tint_ceiling_fade"
+                android:id="@+id/playlist_video_image_fade"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@null"
-                android:scaleType="centerCrop"
-                android:src="@drawable/tint_ceiling_fade"
+                android:scaleType="fitXY"
+                android:src="@drawable/image_title_tint"
                 app:layout_constraintDimensionRatio="H,16:9"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/tint_corner_fade"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@null"
-                android:scaleType="centerCrop"
-                android:src="@drawable/tint_corner_fade"
-                app:layout_constraintDimensionRatio="H,16:9"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,62 +56,31 @@
                 android:id="@+id/playlist_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/archivo_black"
+                android:layout_marginStart="102dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-light"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/playlist_author_image"
                 app:layout_constraintEnd_toEndOf="@+id/playlist_video_image"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/playlist_video_image"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/playlist_author_image"
+                app:layout_constraintTop_toTopOf="@+id/playlist_author_image"
                 tools:text="Deep Coding Session XIV (Deeper Love ❤ 1/3)" />
 
-            <TextView
-                android:id="@+id/playlist_author"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="2dp"
-                android:fontFamily="@font/tenor_sans"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/playlist_video_image"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/playlist_video_image"
-                app:layout_constraintTop_toBottomOf="@+id/playlist_title"
-                tools:text="by MadChuckle" />
-
-            <TextView
-                android:id="@+id/playlist_video_url"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/tenor_sans"
-                android:textAlignment="textEnd"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/tint_corner_fade"
-                app:layout_constraintEnd_toEndOf="@+id/tint_corner_fade"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/playlist_video_image"
-                tools:text="18" />
-
-            <ImageView
-                android:id="@+id/playlist_icon_tracks"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginEnd="8dp"
-                android:contentDescription="@null"
-                android:tint="@android:color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/playlist_video_url"
-                app:layout_constraintEnd_toStartOf="@+id/playlist_video_url"
-                app:layout_constraintTop_toTopOf="@+id/playlist_video_url"
-                app:srcCompat="@drawable/icon_play" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/playlist_author_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/author_chillhop_music"
+                app:civ_border_color="@color/semiTransparentWhite"
+                app:civ_border_width="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </android.support.constraint.ConstraintLayout>

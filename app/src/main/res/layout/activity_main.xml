@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?><!-- Layout for the main screen -->
-<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/gridview_playlist"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    android:columnWidth="90dp"
-    android:gravity="center"
-    android:numColumns="1"
-    android:stretchMode="columnWidth"
-    tools:layoutManager="android.support.v7.widget.GridLayoutManager"
-    tools:listitem="@layout/list_item"
-    tools:spanCount="1" />
+    android:background="#303030"
+    tools:context=".PlaylistActivity">
+
+    <ImageView
+        android:id="@+id/main_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha=".3"
+        android:scaleType="centerCrop"
+        android:src="@drawable/preview_chill_study_beats_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridView
+        android:id="@+id/gridview_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:numColumns="1"
+        android:stretchMode="columnWidth"
+        tools:layoutManager="android.support.v7.widget.GridLayoutManager"
+        tools:listitem="@layout/list_item"
+        android:layout_marginTop="25dp"
+        tools:spanCount="1" />
+</android.support.constraint.ConstraintLayout>
+
+

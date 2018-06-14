@@ -63,16 +63,16 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> {
         playlistTitleTextView.setText(currentPlaylist.getPlaylistTitle());
 
         // Find the TextView in the list_item.xml layout with the ID playlist_author
-        TextView playlistAuthorTextView = gridItemView.findViewById(R.id.playlist_author);
+        //TextView playlistAuthorTextView = gridItemView.findViewById(R.id.playlist_author);
         // Get the version number from the current Playlist object and
         // set this text on the author TextView
-        playlistAuthorTextView.setText(currentPlaylist.getPlaylistAuthor());
+        //playlistAuthorTextView.setText(currentPlaylist.getPlaylistAuthor());
 
         // Find the TextView in the list_item.xml layout with the ID playlist_video_url
-        TextView playlistVideoURLTextView = gridItemView.findViewById(R.id.playlist_video_url);
+        //TextView playlistVideoURLTextView = gridItemView.findViewById(R.id.playlist_video_url);
         // Get the YouTube URL from the current Playlist object and
         // set this text on the youtube URL TextView
-        playlistVideoURLTextView.setText(currentPlaylist.getPlaylistVideoURL());
+        //playlistVideoURLTextView.setText(currentPlaylist.getPlaylistVideoURL());
 
         // Find the ImageView in the list_item.xml layout with the ID playlist_video_image
         ImageView playlistVideoImageView = gridItemView.findViewById(R.id.playlist_video_image);
@@ -81,10 +81,10 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> {
         playlistVideoImageView.setImageResource(currentPlaylist.getPlaylistVideoImage());
 
         // Find the ImageView in the list_item.xml layout with the ID playlist_author_image
-        //ImageView playlistAuthorImageView = (ImageView) gridItemView.findViewById(R.id.playlist_author_image);
+        ImageView playlistAuthorImageView = gridItemView.findViewById(R.id.playlist_author_image);
         // Get the image resource ID from the current Playlist object and
         // set the image to the playlist image
-        //playlistAuthorImageView.setImageResource(currentPlaylist.getPlaylistAuthorImage());
+        playlistAuthorImageView.setImageResource(currentPlaylist.getPlaylistAuthorImage());
 
 
         // Set the OnClick listener for the layout

@@ -4,7 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".PlaylistActivity">
+
+    <ImageView
+        android:id="@+id/playlist_video_image_blur"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.2"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/preview_chill_study_beats_1"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/playlist_video_image"
@@ -19,43 +34,45 @@
         app:srcCompat="@drawable/preview_chill_study_beats_1" />
 
     <ImageView
-        android:id="@+id/gradient_overlay"
+        android:id="@+id/playlist_video_image_blur_fade"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
-        app:layout_constraintDimensionRatio="H,16:9"
+        android:src="@drawable/image_title_tint"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playlist_video_image"
-        app:srcCompat="@drawable/tint_style_1" />
+        app:layout_constraintTop_toBottomOf="@+id/playlist_video_image" />
 
     <TextView
         android:id="@+id/playlist_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-light"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playlist_author_url"
+        app:layout_constraintTop_toBottomOf="@+id/playlist_author_image"
         tools:text="Deep Coding Session XIV (Deeper Love ❤ 1/3)" />
 
     <TextView
         android:id="@+id/playlist_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-light"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toEndOf="@+id/playlist_author_url"
-        app:layout_constraintTop_toTopOf="@+id/gradient_overlay"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/playlist_author_image"
+        app:layout_constraintTop_toBottomOf="@+id/playlist_video_image"
         tools:text="by MadChuckle" />
 
     <TextView
@@ -68,42 +85,74 @@
         android:fontFamily="sans-serif-light"
         android:textAlignment="textEnd"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/gradient_overlay"
-        app:layout_constraintEnd_toEndOf="@+id/gradient_overlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/playlist_video_image"
         tools:text="18" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/playlist_author_url"
+        android:id="@+id/playlist_author_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="165dp"
-        android:src="@drawable/bebe_pp"
+        android:layout_marginStart="24dp"
+        android:src="@drawable/author_beyondskys09"
         app:civ_border_color="@color/semiTransparentWhite"
         app:civ_border_width="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/playlist_video_image"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/playlist_video_image" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/button_play"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/icon_pause"
+        app:civ_border_color="@color/semiTransparentWhite"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playlist_title"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/button_skip_previous"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/icon_skip_previous"
+        app:civ_border_color="@color/semiTransparentWhite"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_play"
+        app:layout_constraintEnd_toStartOf="@+id/button_play"
+        app:layout_constraintTop_toTopOf="@+id/button_play" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/button_skip_next"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/icon_skip_next"
+        app:civ_border_color="@color/semiTransparentWhite"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_play"
+        app:layout_constraintStart_toEndOf="@+id/button_play"
+        app:layout_constraintTop_toTopOf="@+id/button_play" />
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/gradient_overlay"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:theme="@style/TransparentBar">
+        app:theme="@style/TransparentBar" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:gravity="center_vertical"
-            android:text="About"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="12dp" />
-    </android.support.v7.widget.Toolbar>
 </android.support.constraint.ConstraintLayout>
