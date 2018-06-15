@@ -48,7 +48,7 @@ public class PlaylistActivity extends AppCompatActivity {
         ImageView nowPlayingVideoImageImageViewBlur = findViewById(R.id.playlist_video_image_blur);
         nowPlayingVideoImageImageViewBlur.setImageResource(nowPlayingIntent.getIntExtra("KEY_PLAYLIST_VIDEO_IMAGE", 0));
         Bitmap bitmap = ((BitmapDrawable) nowPlayingVideoImageImageViewBlur.getDrawable()).getBitmap();
-        nowPlayingVideoImageImageViewBlur.setImageBitmap(new BlurUtils().blur(PlaylistActivity.this, bitmap, 15.5f));
+        nowPlayingVideoImageImageViewBlur.setImageBitmap(new BlurUtils().blur(PlaylistActivity.this, bitmap, 10.5f));
 
         // Top back button toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);

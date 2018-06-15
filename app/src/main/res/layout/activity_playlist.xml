@@ -99,16 +99,17 @@
         android:src="@drawable/author_beyondskys09"
         app:civ_border_color="@color/semiTransparentWhite"
         app:civ_border_width="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/playlist_video_image"
+        app:layout_constraintBottom_toTopOf="@+id/playlist_video_image_blur_fade"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/playlist_video_image" />
+        app:layout_constraintTop_toTopOf="@+id/playlist_video_image_blur_fade" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/button_play"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginBottom="24dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/icon_pause"
         app:civ_border_color="@color/semiTransparentWhite"
         app:civ_border_width="0dp"
