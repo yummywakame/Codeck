@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="start"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/linear_layout">
 
     <android.support.v7.widget.CardView
         android:id="@+id/playlist_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="@dimen/margin_xs"
+        android:layout_marginEnd="@dimen/margin_s"
+        android:layout_marginStart="@dimen/margin_s"
+        android:layout_marginBottom="@dimen/margin_xs"
         app:cardCornerRadius="5dp"
-        app:cardElevation="6dp"
+        app:cardElevation="4dp"
+        android:stateListAnimator="@animator/lift_on_touch"
+        app:cardUseCompatPadding="true"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -70,11 +74,11 @@
                 android:id="@+id/playlist_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginEnd="@dimen/margin_s"
+                android:layout_marginStart="@dimen/margin_m"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@android:color/white"
-                android:textSize="14sp"
+                android:textSize="@dimen/text_size_s"
                 app:layout_constraintEnd_toStartOf="@+id/playlist_author_image"
                 app:layout_constraintStart_toStartOf="@+id/diagonal_overlay"
                 app:layout_constraintTop_toTopOf="@+id/playlist_author_image"
@@ -84,8 +88,8 @@
                 android:id="@+id/playlist_author_image"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/margin_m"
+                android:layout_marginTop="@dimen/margin_m"
                 android:src="@drawable/author_chillhop_music"
                 app:civ_border_color="@color/semiTransparentWhite"
                 app:civ_border_width="10dp"
@@ -94,4 +98,4 @@
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

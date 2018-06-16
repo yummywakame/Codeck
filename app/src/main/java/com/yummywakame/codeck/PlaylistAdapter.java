@@ -46,6 +46,7 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> {
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         // Check if the existing view is being reused, otherwise inflate the view
         View gridItemView = convertView;
         if (gridItemView == null) {
@@ -62,18 +63,6 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> {
         // set this text on the title TextView
         playlistTitleTextView.setText(currentPlaylist.getPlaylistTitle());
 
-        // Find the TextView in the list_item.xml layout with the ID playlist_author
-        //TextView playlistAuthorTextView = gridItemView.findViewById(R.id.playlist_author);
-        // Get the version number from the current Playlist object and
-        // set this text on the author TextView
-        //playlistAuthorTextView.setText(currentPlaylist.getPlaylistAuthor());
-
-        // Find the TextView in the list_item.xml layout with the ID playlist_video_url
-        //TextView playlistVideoURLTextView = gridItemView.findViewById(R.id.playlist_video_url);
-        // Get the YouTube URL from the current Playlist object and
-        // set this text on the youtube URL TextView
-        //playlistVideoURLTextView.setText(currentPlaylist.getPlaylistVideoURL());
-
         // Find the ImageView in the list_item.xml layout with the ID playlist_video_image
         ImageView playlistVideoImageView = gridItemView.findViewById(R.id.playlist_video_image);
         // Get the image resource ID from the current Playlist object and
@@ -86,11 +75,11 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> {
         // set the image to the playlist image
         playlistAuthorImageView.setImageResource(currentPlaylist.getPlaylistAuthorImage());
 
-
         // Set the OnClick listener for the layout
         gridItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent nowPlayingIntent = new Intent(getContext(), PlaylistActivity.class);
                 // Add the song name and artist name to the intent sent to NowPlayingActivity
 
@@ -99,11 +88,9 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> {
                 nowPlayingIntent.putExtra("KEY_PLAYLIST_VIDEO_URL", currentPlaylist.getPlaylistVideoURL());
                 nowPlayingIntent.putExtra("KEY_PLAYLIST_VIDEO_IMAGE", currentPlaylist.getPlaylistVideoImage());
                 nowPlayingIntent.putExtra("KEY_PLAYLIST_AUTHOR_IMAGE", currentPlaylist.getPlaylistAuthorImage());
-
                 getContext().startActivity(nowPlayingIntent);
             }
         });
-
 
         // Return the whole grid item layout
         // so that it can be shown in the GridView

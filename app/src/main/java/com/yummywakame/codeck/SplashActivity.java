@@ -16,6 +16,7 @@ public class SplashActivity extends AppCompatActivity {
     /**
      * Creates a fade-in splash screen.
      * Resource/Tutorial: https://youtu.be/h_hTuaEpc-8
+     *
      * @param savedInstanceState
      */
 
@@ -31,19 +32,18 @@ public class SplashActivity extends AppCompatActivity {
 
         // locate images to fade in
         logo = findViewById(R.id.fadein_codeck_logo);
-        Animation introFade = AnimationUtils.loadAnimation(this,R.anim.intro_fade_animation);
+        Animation introFade = AnimationUtils.loadAnimation(this, R.anim.intro_fade_animation);
         logo.startAnimation(introFade);
 
         // after timer, proceed to MainActivity
-        final Intent goToMainActivity = new Intent(this,MainActivity.class);
+        final Intent goToMainActivity = new Intent(this, MainActivity.class);
         Thread timer = new Thread() {
             public void run() {
                 try {
-                    sleep(1000);
+                    sleep(1500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }
-                finally {
+                } finally {
                     startActivity(goToMainActivity);
                     finish();
                 }

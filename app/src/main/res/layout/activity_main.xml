@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".PlaylistActivity">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/main_background"
@@ -23,13 +23,12 @@
         android:id="@+id/gridview_playlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="24dp"
-        android:columnWidth="90dp"
         android:gravity="center"
         android:numColumns="1"
         android:stretchMode="columnWidth"
         tools:layoutManager="android.support.v7.widget.GridLayoutManager"
         tools:listitem="@layout/list_item"
+        android:paddingTop="@dimen/margin_l"
         tools:spanCount="1" />
 </android.support.constraint.ConstraintLayout>
 

@@ -6,12 +6,11 @@ import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.yummywakame.codeck.BlurUtils;
 
 /**
  * The Playlist Activity displays data from the clicked GridView item:
@@ -19,7 +18,6 @@ import com.yummywakame.codeck.BlurUtils;
  */
 
 public class PlaylistActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +27,14 @@ public class PlaylistActivity extends AppCompatActivity {
         // Get the intent that was used to start this activity
         Intent nowPlayingIntent = getIntent();
 
-        // Grab the TextViews and Resource IDs for selected playlist
+        // Find the views for selected playlist
         TextView nowPlayingTitleTextView = findViewById(R.id.playlist_title);
         TextView nowPlayingAuthorTextView = findViewById(R.id.playlist_author);
         TextView nowPlayingVideoURLTextView = findViewById(R.id.playlist_video_url);
         ImageView nowPlayingVideoImageImageView = findViewById(R.id.playlist_video_image);
         ImageView nowPlayingAuthorImageView = findViewById(R.id.playlist_author_image);
 
-        // Set the layout song name and artist name to the values pulled from the intent
+        // Set the views to the values pulled from the intent
         nowPlayingTitleTextView.setText(nowPlayingIntent.getStringExtra("KEY_PLAYLIST_TITLE"));
         nowPlayingAuthorTextView.setText(nowPlayingIntent.getStringExtra("KEY_PLAYLIST_AUTHOR"));
         nowPlayingVideoURLTextView.setText(nowPlayingIntent.getStringExtra("KEY_PLAYLIST_VIDEO_URL"));
@@ -49,23 +47,21 @@ public class PlaylistActivity extends AppCompatActivity {
         Bitmap bitmap = ((BitmapDrawable) nowPlayingVideoImageImageViewBlur.getDrawable()).getBitmap();
         nowPlayingVideoImageImageViewBlur.setImageBitmap(new BlurUtils().blur(PlaylistActivity.this, bitmap, 8.5f));
 
-        // Top back button toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("");
-            getSupportActionBar().setHomeButtonEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-
         // find buttons for onClickListeners
         final ImageView buttonPlay = findViewById(R.id.button_play);
         final ImageView buttonSkipNext = findViewById(R.id.button_skip_next);
         final ImageView buttonSkipPrevious = findViewById(R.id.button_skip_previous);
-
-        // do a simple fade effect animation on the button when clicked
         final AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.5F);
+        final Toolbar toolbar = findViewById(R.id.toolbar);
+
+        // Top back button toolbar
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("");
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
 
         // play / pause button click listener
         buttonPlay.setTag(1);
@@ -101,5 +97,30 @@ public class PlaylistActivity extends AppCompatActivity {
                 buttonSkipNext.startAnimation(buttonClick);
             }
         });
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    /**
+     * On up or back button, make transition slide from left to right.
+     * Resource: https://stackoverflow.com/a/32033927/9302422
+     */
+
+    @Override
+    public void onBackPressed() {
+        this.finish();
+
+        overridePendingTransition(R.anim.fade_in, R.anim.right_slide_out);
     }
 }
