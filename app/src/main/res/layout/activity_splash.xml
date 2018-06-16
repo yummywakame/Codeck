@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity"
-    android:background="@color/colorSplashBackground">
+    android:background="@color/colorPrimaryDark"
+    tools:context=".SplashActivity">
 
     <ImageView
-        android:id="@+id/cosmos"
+        android:id="@+id/main_background"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@null"
+        android:alpha=".3"
         android:scaleType="centerCrop"
+        android:src="@drawable/cosmos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cosmos" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/fadein_codeck_logo"
@@ -31,5 +31,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/codeck_playlists_logo" />
+        app:srcCompat="@drawable/codeck_mixtapes_logo" />
 </android.support.constraint.ConstraintLayout>

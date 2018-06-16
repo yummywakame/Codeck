@@ -1,6 +1,8 @@
 package com.yummywakame.codeck;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
@@ -22,6 +24,11 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        // Blur background image
+        ImageView bgImgView = findViewById(R.id.main_background);
+        Bitmap bitmap = ((BitmapDrawable) bgImgView.getDrawable()).getBitmap();
+        bgImgView.setImageBitmap(new BlurUtils().blur(SplashActivity.this, bitmap, 15.5f));
+
         // locate images to fade in
         logo = findViewById(R.id.fadein_codeck_logo);
         Animation introFade = AnimationUtils.loadAnimation(this,R.anim.intro_fade_animation);
@@ -32,7 +39,7 @@ public class SplashActivity extends AppCompatActivity {
         Thread timer = new Thread() {
             public void run() {
                 try {
-                    sleep(3000);
+                    sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

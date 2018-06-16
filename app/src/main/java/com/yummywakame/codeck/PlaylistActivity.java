@@ -41,14 +41,13 @@ public class PlaylistActivity extends AppCompatActivity {
         nowPlayingAuthorTextView.setText(nowPlayingIntent.getStringExtra("KEY_PLAYLIST_AUTHOR"));
         nowPlayingVideoURLTextView.setText(nowPlayingIntent.getStringExtra("KEY_PLAYLIST_VIDEO_URL"));
         nowPlayingVideoImageImageView.setImageResource(nowPlayingIntent.getIntExtra("KEY_PLAYLIST_VIDEO_IMAGE", 0));
-
         nowPlayingAuthorImageView.setImageResource(nowPlayingIntent.getIntExtra("KEY_PLAYLIST_AUTHOR_IMAGE", 0));
 
         // Blur background image
         ImageView nowPlayingVideoImageImageViewBlur = findViewById(R.id.playlist_video_image_blur);
         nowPlayingVideoImageImageViewBlur.setImageResource(nowPlayingIntent.getIntExtra("KEY_PLAYLIST_VIDEO_IMAGE", 0));
         Bitmap bitmap = ((BitmapDrawable) nowPlayingVideoImageImageViewBlur.getDrawable()).getBitmap();
-        nowPlayingVideoImageImageViewBlur.setImageBitmap(new BlurUtils().blur(PlaylistActivity.this, bitmap, 10.5f));
+        nowPlayingVideoImageImageViewBlur.setImageBitmap(new BlurUtils().blur(PlaylistActivity.this, bitmap, 8.5f));
 
         // Top back button toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -66,8 +65,7 @@ public class PlaylistActivity extends AppCompatActivity {
         final ImageView buttonSkipPrevious = findViewById(R.id.button_skip_previous);
 
         // do a simple fade effect animation on the button when clicked
-        final AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
-
+        final AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.5F);
 
         // play / pause button click listener
         buttonPlay.setTag(1);

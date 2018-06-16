@@ -14,14 +14,6 @@ import java.util.ArrayList;
  */
 public class MainActivity extends AppCompatActivity {
 
-    // Create keys for playlist's GridView item data
-    public static final String KEY_PLAYLIST_TITLE = "";
-    public static final String KEY_PLAYLIST_AUTHOR = "";
-    public static final String KEY_PLAYLIST_VIDEO_URL = "";
-    public static final int KEY_PLAYLIST_VIDEO_IMAGE = 0;
-    public static final int KEY_PLAYLIST_AUTHOR_IMAGE = 0;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
