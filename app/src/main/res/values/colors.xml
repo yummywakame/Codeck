@@ -5,6 +5,6 @@
     <color name="colorAccent">#ff0077</color>
     <color name="colorCool">#039be5</color>
     <color name="colorBackground">#edfafd</color>
-    <color name="semiTransparentWhite">#40FFFFFF</color>
+    <color name="semiTransparentWhite">#40ffffff</color>
     <color name="colorSplashBackground">#4c0654</color>
 </resources>

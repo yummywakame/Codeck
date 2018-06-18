@@ -66,7 +66,7 @@
         android:layout_marginEnd="@dimen/margin_l"
         android:layout_marginStart="@dimen/margin_l"
         android:layout_marginTop="@dimen/margin_m"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/quicksand"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_m"
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_s"
         android:layout_marginTop="@dimen/margin_m"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/quicksand"
         android:textColor="@android:color/white"
         android:textSize="@dimen/text_size_s"
         app:layout_constraintStart_toEndOf="@+id/playlist_author_image"
@@ -95,7 +95,7 @@
         android:layout_marginBottom="@dimen/margin_s"
         android:layout_marginEnd="@dimen/margin_s"
         android:layout_marginStart="@dimen/margin_m"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/quicksand"
         android:textAlignment="textEnd"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -160,13 +160,6 @@
         app:layout_constraintStart_toEndOf="@+id/button_play"
         app:layout_constraintTop_toTopOf="@+id/button_play" />
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:layout_marginTop="@dimen/margin_l"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:theme="@style/TransparentBar" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
      * Creates a fade-in splash screen.
      * Resource/Tutorial: https://youtu.be/h_hTuaEpc-8
      *
-     * @param savedInstanceState
+     * @param savedInstanceState is not used for this splash screen
      */
 
     @Override
@@ -30,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
         Bitmap bitmap = ((BitmapDrawable) bgImgView.getDrawable()).getBitmap();
         bgImgView.setImageBitmap(new BlurUtils().blur(SplashActivity.this, bitmap, 15.5f));
 
-        // locate images to fade in
+        // locate image to fade in
         logo = findViewById(R.id.fadein_codeck_logo);
         Animation introFade = AnimationUtils.loadAnimation(this, R.anim.intro_fade_animation);
         logo.startAnimation(introFade);

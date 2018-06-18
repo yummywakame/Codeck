@@ -2,6 +2,8 @@ package com.yummywakame.codeck;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,8 +46,9 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> {
      * @param parent      The parent ViewGroup that is used for inflation.
      * @return The View for the position in the AdapterView.
      */
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         // Check if the existing view is being reused, otherwise inflate the view
         View gridItemView = convertView;

@@ -52,16 +52,8 @@ public class PlaylistActivity extends AppCompatActivity {
         final ImageView buttonSkipNext = findViewById(R.id.button_skip_next);
         final ImageView buttonSkipPrevious = findViewById(R.id.button_skip_previous);
         final AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.5F);
-        final Toolbar toolbar = findViewById(R.id.toolbar);
 
-        // Top back button toolbar
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("");
-            getSupportActionBar().setHomeButtonEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-        }
+
 
         // play / pause button click listener
         buttonPlay.setTag(1);
@@ -100,6 +92,10 @@ public class PlaylistActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * On up or back button, make transition slide from left to right.
+     * Resource: https://stackoverflow.com/a/32033927/9302422
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -111,11 +107,6 @@ public class PlaylistActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-    /**
-     * On up or back button, make transition slide from left to right.
-     * Resource: https://stackoverflow.com/a/32033927/9302422
-     */
 
     @Override
     public void onBackPressed() {

@@ -33,8 +33,4 @@ dependencies {
 
     // library for circular images
     implementation 'de.hdodenhof:circleimageview:2.2.0'
-
-    //sdk for accurate font sizes across devices
-    //implementation 'com.intuit.ssp:ssp-android:1.0.5'
-
 }

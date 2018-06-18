@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Layout for the main screen -->
+<?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,6 +14,7 @@
         android:alpha=".3"
         android:scaleType="centerCrop"
         android:src="@drawable/preview_chill_study_beats_5"
+        android:contentDescription="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +29,9 @@
         android:stretchMode="columnWidth"
         tools:layoutManager="android.support.v7.widget.GridLayoutManager"
         tools:listitem="@layout/list_item"
-        android:paddingTop="@dimen/margin_l"
+        android:paddingTop="@dimen/margin_s"
         tools:spanCount="1" />
+
 </android.support.constraint.ConstraintLayout>
 
 

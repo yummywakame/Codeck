@@ -1,15 +1,5 @@
 package com.yummywakame.codeck;
 
-/**
- * Codeck
- * Created by Olivia Meiring on 2018/06/13.
- * Yummy Wakame
- * olivia@yummy-wakame.com
- * <p>
- * Resource for creating this blur class:
- * https://www.quora.com/How-do-I-apply-for-Gaussian-blur-in-a-video-view-using-Android
- */
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v8.renderscript.Allocation;
@@ -17,6 +7,10 @@ import android.support.v8.renderscript.Element;
 import android.support.v8.renderscript.RenderScript;
 import android.support.v8.renderscript.ScriptIntrinsicBlur;
 
+/**
+ * {@link BlurUtils} blurs any image.
+ * Resource: https://www.quora.com/How-do-I-apply-for-Gaussian-blur-in-a-video-view-using-Android
+ */
 public class BlurUtils {
 
     private static final float BITMAP_SCALE = 0.4f;
